@@ -1,0 +1,216 @@
+2023.8.21
+.c-源文件
+.h-头文件
+
+
+//包含一个叫stdio.h的文件
+//std-标准standard input output
+//
+#include <stdio.h>
+int  main()  //主函数-程序的入口-main函数有且只有一个
+     //int  是整型的意思
+	//main前面的int表示main函数调用返回一个整型
+	//void main 写法过时了
+{
+	//这里完成任务
+	//printf是库函数-C语言本身提供给我们使用的函数
+	//别人的东西-打招呼
+	//#include
+	printf("去你的\n");//print function-printf-打印函数
+	                          //   \n表示输出后要换行
+	return 0;  //返回0
+}
+ 
+
+char         //字符数据类型
+short        //短整型
+int          //整形
+long         //长整型
+long long    //更长的整形
+float        //单精度浮点型
+double       //双精度浮点型
+
+------
+#include <stdio.h>
+//char-字符类型
+int main()
+{
+	char ch='A';//内存申请
+	printf("%c\n", ch);  //%c--打印字符数据的格式
+	return 0;
+}
+
+------
+#include <stdio.h>
+int main()
+{
+	int age = 23;
+	printf("%d\n",age);  //%d--打印整形十进制数据
+	return 0;
+}
+
+
+-----
+#include <stdio.h>
+int main()
+{
+	long num = 10000000;
+	printf("%d\n", num);
+
+	return 0;
+}
+
+//char-字符类型
+//%d--打印整形
+//%c--打印字符
+//%f--打印浮点数字--打小数
+//%p--以地址的形式打印
+//%x--打印16进制数字
+//%o--
+//%s--打印字符串
+
+计算机中单位
+bit--比特位        只能存一个1或0
+byte-字节           一个字节=8个比特位
+kb             1kb=1024byte
+mb
+gb
+tb
+pb
+
+#include <stdio.h>
+int main()
+{
+
+	printf("%d\n",  sizeof(char));       //1
+	printf("%d\n", sizeof(short));       //2
+	printf("%d\n", sizeof(int));           //4
+	printf("%d\n", sizeof(long));        //4--可以4可以8 
+	printf("%d\n", sizeof(long long));   //8      c语言规定sizeof（long）>sizeof（int）
+	printf("%d\n", sizeof(float));        //4
+	printf("%d\n", sizeof(double));      //8
+	 return 0;
+}
+
+
+
+#include <stdio.h>
+int main()
+{
+
+	short age = 20;     //向内存申请2个字节=16bit位，来存放20
+	float weight = 95.6f;     //向内存申请4个字节，存放小数
+	                                 //加f就确定是单精度浮点型，电脑默认都是double的
+	 return 0;
+}
+
+定义变量
+int age=150；
+float weight=45.5f；
+char ch=’w‘；
+
+#include <stdio.h>
+
+int num1= 10;//全局变量 -定义在代码块{}之外的变量---作用是整个工程
+int main()
+{
+	int num2= 10;//局部变量-定义在代码块{}内部的变量
+	
+	 return 0;
+}
+
+
+#include <stdio.h>
+int a = 100;
+int main()
+{
+	int a = 10;
+	          //局部变量和全局变量名字建议不要相同，容易误会，产生bug
+	          //当局变量和全局变量的名字相同的时候，局部变量
+	printf("%d\n", a);
+	
+	 return 0;
+}
+
+
+下面的打出来有问题，但好像是VS的问题
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main()
+{
+	//计算两个数的和
+	int num1 = 0;
+	int num2 = 0;
+	int sum = 0;
+	//输入函数--使用输入函数scanf
+	scanf("%d%d", &num1, &num2);  //取地址符号&
+	//c语言语法规定，变量要定义在当前代码块的最前面
+	sum = num1 + num2;
+	printf("%d\n", sum);
+
+		return 0;
+}
+
+
+变量的作用域和生命周期
+哪里可以用，哪里就是作用域
+变量的生命周期--变量的创建到变量的销毁之间的一个时间段
+局部变量的生命周期--进入作用域生命周期开始，出作用域生命周期结束
+全局变量的生命周期--整个程序的生命周期
+
+#define _CRT_SECURE_NO_WARNINGS
+#include  <stdio.h>
+int main()
+{
+	int num = 0;
+	
+	printf("num=%d\n", num);//可以使用，是作用域
+
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS
+#include  <stdio.h>
+int main()
+{
+	{int num = 0;  //这样，作用域为新的区间
+
+	}
+	
+	printf("num=%d\n", num);//可以使用，是作用域
+
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS
+#include  <stdio.h>
+int global = 2020;  //全局变量
+void test()   //调用函数
+{
+	printf("test()--%d\n", global);
+}
+int main()
+{
+	test();
+	printf("%d\n", global);
+	return 0;
+}
+
+
+#define _CRT_SECURE_NO_WARNINGS
+#include  <stdio.h>
+int main()
+{
+	extern int g_val;    //声明extern外部符号的
+	printf("g_val=%d\n", g_val);//未声明的标识符
+	return 0;
+}
+
+这是另一个源文件里的
+#define _CRT_SECURE_NO_WARNINGS
+
+
+int g_val = 2021;
+
