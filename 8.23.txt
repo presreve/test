@@ -1,0 +1,268 @@
+注释风格
+C语言风格注释/*xxxxx*/
+         缺陷：不能嵌套注释
+C++风格的注释//xxxxx
+        可以注释一行，也可以注释多行
+   Ctrl+K+C    注释
+  Ctrl+K+U   取消注释
+
+--------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+	int input = 0;
+	printf("加入比特\n");
+	printf("你要好好学习吗？(1/0)你选择--");
+	scanf("%d", &input);
+	if (input == 1)
+		printf("好offer\n");
+	else
+		printf("卖红薯\n");
+	return 0;
+}
+-----------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+	int input = 0;
+	printf("你要好好学习吗？你选择（1/0）");
+	scanf("%d", &input);
+	if (input == 1)
+		printf("赚大钱\n");
+	else
+		printf("捡垃圾\n");
+	return 0;
+}
+---------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+	int 迪迦= 0;
+	printf("你要好好学习吗？你选择（1/0）");
+	scanf("%d", &迪迦);
+	if (迪迦== 1)
+		printf("赚大钱\n");
+	else
+		printf("捡垃圾\n");
+	return 0;
+}
+-------------------
+循环
+while循环
+for语句
+do....while语句
+------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main()
+{
+	int line = 0;
+	printf("加入比特\n");
+	while (line < 200)
+	{
+		printf("敲一行代码%d\n",line);
+		line++;
+	}
+	if(line>=200)
+	printf("赚大钱\n");
+	return 0;
+}
+-------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main()
+{
+	int line = 0;
+	while (line < 200)
+	{
+		printf("去打架\n");
+		line++;
+	}
+	if (line >= 200)
+		printf("成为大哥");
+	return 0;
+}
+--------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int Add(int x, int y)   //Add函数是自定义函数，不是库函数
+{
+	int z = x + y;
+	return z;
+}
+int main()
+{
+	int num1 = 10;
+	int num2 = 20;
+	int sum = 0;
+	int a = 100;
+	int b = 200;
+	//sum = num1 + num2;
+	sum = Add(num1 ,num2);
+	//sum = a + b;
+	//sum = Add(a, b);
+	//sum = Add(2, 3);
+	//printf("sum=%d\n", sum);
+
+	return 0;
+}
+----------------------------
+数组
+一组相同类型元素的集合
+
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main()
+{
+	//int a = 1;
+	//int b = 2;
+	//int c = 3;
+	//int d =4;                                 //每个数字都有下表，从0开始
+	int arr[10] = {1,2,3,4,5,6,7,8,9,10};  //定义一个存放10个整数数字的数组
+	//printf("%d\n", arr[4]);              //用下标的形式访问元素--arr[下标]
+	int i = 0;
+	while(i<10)
+	{
+		printf("%d", arr[i]);
+		i++;
+	}
+	//char ch[20];  //定义一个字符
+	//float arr2[5];
+	return 0;
+}
+------------------------------
+操作符
+算术操作符                         
++ - * / %
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main()
+{
+	int a = 5/ 2;  //结果是商
+	//int a = 5% 2;  // 取模结果是余数
+	printf("%d\n", a);
+	return 0;
+}
+
+移位操作符
+<<   >>       移的是二进制位
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main()
+{
+                                     //移（2进制位）位操作符
+	                                  //  <<左移    //  >>右移
+	int a = 1;            //整型占4个字节--32个比特位
+	                        //00000000000000000000000000000001    移位后变成
+	//int b=a << 1;   //00000000000000000000000000000010   十进制表示为2
+	int b = a << 2;   //100  十进制为4
+	printf("%d\n", b);
+	printf("%d\n", a);
+	return 0;
+}
+位操作符
+               &   |   ^
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main()
+{
+	     //（2进制）位操作
+	    //  &按位与      与：并且的意思    C语言里0为假，1为真    都是一样的才行
+	    //   | 按位或       或者的意思                    有一个就行           
+	    //  ^按位异或    异或的计算规律：对应的二进制位相同，则为0
+	                                                   //对应的二进制位相异，则为1
+	int a = 3;              //011                假真真         
+	int b = 5;             //101               真假真
+	//int c = a & b;    //001               假假真
+	//int c = a | b;     //111  
+	int c = a ^ b;     //110
+	printf("%d\n", c);
+	return 0;
+}
+
+赋值操作符   复合赋值符
+  =   +=   -=   *=   /=   &=   ^=    |=    >>=    <<=
+
+#define _CRT_SECURE_NO_WARNINGS
+int main()
+{
+	int a = 10;
+	a = 20;       //  =赋值   ==判断相等
+	a = a + 10;  //1
+	a += 10;    //2  这两种写法完全等价
+	a = a - 20;
+	a -= 20;
+	a = a & 2;
+	a &= 2;
+	return 0;
+}
+
+单目操作符
+双目操作符
+三目操作符
+
+单目操作符
+！            逻辑反操作              真变假   ，假变真
+-              负值
++              正值
+&               取地址符
+siziof   操作数的类型长度（以字节位单位）
+ 
+
+
+
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int main()                                       
+{
+	//int a = 10;
+	//int b = 20;
+	//a + b;    // +号是双目操作符
+	                                  //C语言中0表示假，非0表示真
+	//int a = 0;
+	//printf("%d\n", a);
+	//printf("%d\n", !a);             //  !逻辑反操作
+	int a = -2;
+	int b = -a;
+	int c = 3;
+	return 0;
+}
+------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int main()
+{
+	//int a = 10;                           //  sizeof计算的是变量/类型所占空间的大小，单位是字节
+	//printf("%d\n", sizeof(a));       //a是4字节
+	//printf("%d\n", sizeof(int));       //3个写法完全一样
+	//printf("%d\n", sizeof a);
+	////printf("%d\n", sizeof int);    //int的（）不能省略
+	int arr[10] = { 0 };                    //10个整型元素的数组
+	int sz = 8;
+	printf("%d\n", sizeof (arr));         //10*sizeof（int)=40
+	sz = sizeof(arr) / sizeof(arr[0]);       //计算数组的原素个数
+		printf("sz=%d\n", sz);                                      //个数=数组总大小/每个元素大小
+	return 0;
+}
+
+
+//   '\0'--->  转义字符--0，字符串结束标志
+//      0 ---->   数字0
+//      '0' ---->  字符0  -->  ASCII码值为48
+//      'a'  'b'  'c'  '1'  '2'  '3'   字母字符和数字字符
+//   EOF----end of file -- 文件结束标志--  -1
+
+
+
