@@ -4,16 +4,191 @@
 
 int main()
 {
-	int ch = 0;                                   //Ctrl+Z获取一个EOF
-	while((ch=getchar())!=EOF)            //EOF   --  end of file--->  -1
-	{
-		putchar(ch);
-	}
-	//int ch = getchar();         //getchar输入一个字符
-	//putchar(ch);                 //putchar输出字符
-	//printf("%c\n", ch);
+	int i = 0;
+	int k = 0;
+	for (i = 0, k = 0; k = 0; i++, k++)
+		k++;
 	return 0;
 }
+
+
+
+
+//int main()
+//{
+//	int i = 0;
+//	int j = 0;
+//	for ( ; i < 10; i++)
+//	{
+//		for (; j < 10; j++)
+//		{
+//			printf("hehe\n");
+//		}
+//	}
+//	return 0;
+//}
+
+
+
+
+
+//int main()
+//{
+//	for (;;)                              //判断部分被省略，判断条件恒为真
+//	{
+//		printf("hehe\n");
+//	}
+//	return 0;
+//}
+
+
+
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int i = 0;
+//	           //10次循环
+//	           //10次打印
+//	         //10个元素
+//	for (i = 0; i < 10; i++)               //前闭后开的写法
+//	//for(i=0;i<=10;i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
+//}
+
+
+
+
+
+//int main()
+//{
+//	int i = 0;
+//	for (i = 0; i <= 10; i++)
+//	{
+//		if(i=5)                  //不可再for循环内改变变量，防止for失去控制
+//		printf("hehe\n");
+//		printf("haha\n");
+//	}
+//	return 0;
+//}
+
+
+
+
+
+//int main()
+//{     //初始化     判断     循环
+//	int i = 2;
+//	for (i = 1; i <= 10; i++)
+//	{
+//		if (i == 5)
+//				//break;
+//			continue;
+//
+//		printf("%d", i);
+//	}
+//	return 0;
+//}
+
+
+
+
+//int main()
+//{
+//	int i = 0;                    //初始化
+//	while (i < 10)                //判断
+//	{
+//		                              //  三个部分离得太远不好看
+//
+//		i++;                      //调整
+//	}
+//	return 0;
+//}
+
+
+
+//int main()
+//{
+//	int ch = 0;
+//	while ((ch = getchar()) != EOF)
+//	{
+//		if (ch < '0' || ch>'9')
+//			continue;
+//		putchar(ch);
+//	}
+//	return 0;
+//}
+
+
+
+
+
+//int main()
+//{
+//	//int ch = 0;
+//	//while ((ch = getchar()) != EOF)
+//	//{
+//	//	putchar(ch);
+//	//}
+//	//return 0;
+//
+//	int ret = 0;
+//	int ch = 0;
+//	char password[20] = { 0 };
+//	printf("请输入密码：>");
+//	scanf("%s", password);  //输入面膜，存放在passward数组中
+//	while((ch=getchar())!='\n')   //缓冲区还剩一个‘\n’
+//	{ }
+//	printf("请确认(X,Y)\n");
+//	ret = getchar();
+//	if (ret == 'Y')
+//		printf("确认成功\n");
+//	else
+//		printf("放弃确认\n");
+//
+////printf("%d\n", '\n');
+//}
+
+
+
+//int main()
+//{
+//	int i = 0;
+//	for (i = 100; i >= 0; i--)
+//		if (i % 17 == 0)
+//			break;
+//	printf("%d", i);
+//	return 0;
+//}
+
+
+
+//int main()
+//{
+//	int i;
+//		int sum = 0;
+//	for (i = 1; i <= 99; i++);
+//	sum = sum + i + (i + 1) + (i + 2);
+//	printf("sum=%d\n", sum);
+//	return 0;
+//}
+
+
+
+//int main()
+//{
+//	int ch = 0;                                   //Ctrl+Z获取一个EOF
+//	while((ch=getchar())!=EOF)            //EOF   --  end of file--->  -1
+//	{
+//		putchar(ch);
+//	}
+//	//int ch = getchar();         //getchar输入一个字符
+//	//putchar(ch);                 //putchar输出字符
+//	//printf("%c\n", ch);
+//	return 0;
+//}
 
 
 
