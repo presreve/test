@@ -1,156 +1,233 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include<stdio.h>
+#include <stdio.h>
 #include<string.h>
 
+int main()
+{
+	int ch = 0;                                   //Ctrl+Z获取一个EOF
+	while((ch=getchar())!=EOF)            //EOF   --  end of file--->  -1
+	{
+		putchar(ch);
+	}
+	//int ch = getchar();         //getchar输入一个字符
+	//putchar(ch);                 //putchar输出字符
+	//printf("%c\n", ch);
+	return 0;
+}
+
+
 
 
 
 
 //int main()
 //{
-//	char ch = 'w';
-//	char* pc = &ch;
-//	//*pc = 'a';
-//	//printf("%c\n",ch);
-//	printf("%d\n", sizeof(pc));
-//	return 0;
-//}
-
-
-
-//int main()
-//{
-//	int a = 10;        //申请4个字节
-//	int*p=&a;                               //取地址符号
-//	//printf("%d\n", &a);                                 //指针变量----是存放地址的   p类型是int*
-//	//printf("%d\n", p);
-//	*p=20;                                  //  *  -- 解引用操作符
-//	printf("%d\n", a);
-//	return 0;
-//}
-
-
-
-
-
-////#define MAX 100                    // #define定义的标识符常量
-//
-//                                           // #define定义宏
-//int Max(int x, int y)             //函数的实现
-//{
-//	if (x > y)
-//		return x;
-//	else
-//		return y;
-//}
-//                           //宏的定义方式
-//#define MAX(X,Y) (X>Y?X:Y)
-//int main()
-//{
-//	//int a = MAX;
-//	int a = 10;
-//	int b = 20;
-//	                       //函数方式
-//	int max = Max(a, b);
-//	printf("max=%d\n", max);
-//                          //宏的方式
-//	max = MAX(a, b);
-//	printf("max=%d\n", max);
-//	return 0;
-//}
-
-
-
-//extern int Add(int, int);                           //声明外部函数
-//int main()
-//{
-//	int a = 10;
-//	int b = 20;
-//	int sum = Add(a, b);
-//	printf("sum=%d\n", sum);
-//	return 0;
-//}
-
-
-
-////int a = 10;
-//static int a = 10;                   //static 修饰全局变量，改变了作用域，变量只能在原文件内部使用
-//int main()
-//{
-//	extern int a;                               //  extern  --  声明外部符号的
-//	printf("a=%d\n", a);
-//	return 0;
-//}
-
-
-
-
-
-//void test()
-//{
-//	//int a=1；                      //static  修饰局部变量，局部变量生命周期边唱
-//	static int a = 1;                // static 使a是一个静态的局部变量
-//	a++;                             
-//	printf("a=%d\n", a);
-//}
-//int main()
-//{
-//	int i = 0;	while (i < 5)
+//	//while(1)
+//	//	printf("hehe\n");
+//	int i = 1;
+//	while (i <= 10)
 //	{
-//		test();
+//		i++;
+//		if (i == 5)
+//			//break;
+//			continue;
+//		printf("%d ", i);
+//	//	i++;
+//	}
+//	return 0;
+//}
+
+
+
+
+
+
+//int main()
+//{
+//	int n = 1;
+//					int m = 2;
+//	switch (n)
+//	{
+//	case 1:
+//		m++;
+//	case 2:
+//		n++;
+//	case 3:
+//		switch (n)
+//		{//switch允许嵌套使用
+//		case 1:
+//			n++;
+//		case 2:
+//			m++;
+//			n++;
+//			break;
+//		}
+//	case 4:
+//		m++;
+//		break;
+//	default:
+//		break;
+//	}
+//	printf("m = %d, n = %d\n", m, n);
+//	return 0;
+//}
+
+
+
+//int main()
+//{
+//	int day = 0;
+//	scanf ("%d", &day);              //swith是整型表达式
+//	switch (day)                        //case决定入口   是整型常量表达式
+//	{                                       //break决定出口
+//		case 1:
+//			printf("工作日n");
+//			break;
+//		case 2:
+//			printf("工作日\n");
+//			break;
+//		case 3:
+//			printf("工作日\n");
+//			break;
+//		case 4:
+//			printf("工作日\n");
+//			break;
+//		case 5:
+//			printf("工作日\n");
+//			break;
+//		case 6:
+//			printf("休息日\n");
+//			break;
+//		case 7:
+//			printf("休息日\n");
+//			break;
+//		default:
+//		    printf("输入错误\n");
+//			break;
+//	}
+//	
+	
+	//if (day == 1); 
+	//	printf("星期一\n");
+	//else if (2 == day)
+	//	printf("星期二\n");
+	//else if (3 == day)
+	//	printf("星期三\n");
+	//else if (4 == day)
+	//	printf("星期四\n"); 
+	//return 0;
+//}
+
+
+
+
+//int main()
+//{
+//	int i = 0;
+//	while (i <= 100)
+//	{
+//		if (i % 2 == 1)
+//			printf("%d  ", i);
 //		i++;
 //	}
 //	return 0;
 //}
 
 
-//int main()
-//{
-//	                          //typedef   类型定义   类型重定义
-//	typedef unsigned int u_int;    //使u int  和  unsigned int  一样
-//	unsigned int a = 20;
-//	u_int b = 20;
-//	return 0;
-//}
-
-
-
-
 
 
 //int main()
 //{
-//	//register int a = 10;   //建议把a定义成寄存器变量
-//	int a = 10;    
-//	a = -2;           //  int定义的变量是有符号的
-//	signed int；   //通常省略signed     signed 是有符号数字
-////unsigned  int  num=0；                    //  unsigned无符号定义
-//                               //struct         结构体关键字
-//		                    //union     联合体，共用体
-//	return 0;
-//}
+//	int num = 4;
+//	if(5==num)          //常量放在 ”=“ 左边，写代码错不了，num不能赋值给5
+//	{
+//		printf("呵呵\n");
+
+	//if (num = 5)            //  一个=是赋值    ==是判断相等
+	//{
+	//	printf("呵呵\n");
+	//}
+	//return 0;
+	//}
 
 
 
 
 
 //int main()
+	//{
+	//	int a = 0;
+	//	int b = 2;
+	//	if (a == 1)
+	//	{
+	//		if (b == 2)
+	//			printf("hehe\n");
+	//	}
+	//   else
+	//			printf("haha\n");
+	//	return 0;
+	//}
+
+
+
+
+
+//int main()
 //{
-//	  auto int a = 10;      //局部变量----自动变量     auto省略了
+//	int age = 10;
+
+	//if (age < 18)
+	//	printf("未成年\n");
+
+//	if (age < 18)
+//		printf("未成年\n");
+//	else
+//		printf("成年\n");
 //	return 0;
+
+	//if (age < 18)
+	//	printf("未成年");
+	//else if (age >= 18 && age < 28)
+	//	printf("青年");
+	//else if (age >= 28 && age < 50)
+	//	printf("壮年\n");
+	//else if (age >= 50 && age < 90)
+	//	printf("老年\n");
+	//else
+	//	printf("老不死\n");
+
+	//if (age < 18)
+	//{                            //一堆 { }  就是一个代码块
+	//	printf("未成年\n");
+	//	printf("不能谈恋爱");
+	//}
+	//else
+	//{
+	//	if (age >= 18 && age < 28)
+	//		printf("青年");
+	//	else if (age >= 28 && age < 50)
+	//		printf("壮年\n");
+	//	else if (age >= 50 && age < 90)
+	//		printf("老年\n");
+	//	else
+	//		printf("老不死\n");
+	//}
+		
+		/* if (age >= 18 && age < 28)
+		printf("青年");
+	else if (age >= 28 && age < 50)
+		printf("壮年\n");
+	else if (age >= 50 && age < 90)
+		printf("老年\n");
+	else
+		printf("老不死\n");*/
 //}
 
 
 
-
-
-//只要是整数，内存中存储的都是二进制的补码
-//正数 ----  原码 反码 补码都相同
-//负数
-//       原码             ------>      反码                      ------>           补码 
-//  直接按照正负                 原符号位不变            反码+1
-//  写出的二进制序列           其他位取反得到
-//    -2
-//  原码   10000000000000000000000000000010
-//  反码  111111111111111111111111111111111111111111101
-//  补码  111111111111111111111111111111111111111111110
+//int main()
+//{
+//	int a = 0;
+//	;                       //是语句---空语句
+//	return 0;
+//}
