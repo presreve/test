@@ -4,150 +4,147 @@
 #include<windows.h>
 #include<stdlib.h>
 
+int x = 0;
+int y = 0;
+void Swap(int x, int y  )    //void表示没有返回值
+	{
+		int tmp = 0;
+        tmp = x;
+		x = y;
+		y = tmp;
+	}
+
 int main()
 {
-	int i = 0;
-	char password[20] = {0};
-	for (i = 0; i < 3; i++)
-	{
-		printf("请输入密码：");
-			scanf("%s", password);
-			if (strcmp(password , "123456")==0 )         //  == 不能用来比较两个字符串是否相等
-			{                                                           //       应使用库函数   strcmp
-				printf("登陆成功\n");                           //        strcmp   相等返回值为0
-				break;                                           //                       第一个<第二个     返回小于0
-			}                                                   //                          第一个>第二个      返回大于0
-			else
-			{
-				printf("密码错误\n");
-			}
-	}
-	if (i == 3)
-		printf("三次密码均错误，退出程序\n");
+	int a = 10;
+	int b = 20;
+	int tmp = 0;
+	printf("a=%d b=%d\n", a, b);
+	Swap(a, b);
+	//tmp = a;
+	//a = b;
+	//b= tmp;
+	printf("a=%d b=%d\n", a, b);
+
 	return 0;
 }
 
 
+
+
+
+// int get_max(int x, int y)
+//{
+//	 if (x > y)
+//		 return x;
+//	 else
+//		 return y;
+//}
 //int main()
 //{
-//	char arr1[] = "welcome to bit!!!!!!";
-//	char arr2[] = "####################";
-//	int left = 0;
-//	int right = strlen(arr1) - 1;
-//	while (left <= right)
-//	{
-//		arr2[left] = arr1[left];
-//		arr2[right] = arr1[right];
-//		Sleep(500);
-//		system("cls");
-//		printf("%s\n",arr2);
-//		//Sleep(500);
-//		//system("cls");
-//		left++;
-//		right--;
-//	}
+//	int a = 10;
+//	int b = 20;
+//	int max=get_max(a,b);
+//	printf("max=%d\n", max);
+//	 max = get_max(100, 200);
+//	printf("%d\n",max);
 //	return 0;
 //}
 
 
 
 //int main()
-//{
-//	char arr1[] = "welcome to bit!!!";
-//	char arr2[] = "################";
-//	int left = 0;
-//	//int right = sizeof(arr1) / sizeof(arr1[0])-2;
-//	int right = strlen(arr1)-1;          //这个更容易
-//
-//	while (left<=right)
 //	{
-//		arr2[left] = arr1[left];
-//		arr2[right] = arr1[right];
-//		printf("%s\n", arr2);               
-//		Sleep(500) ;                                 //休息一秒
-//		system("cls");                       //执行系统命令的一个函数  ---  cls  --  清空屏幕
-//		left++;
-//		right--;
+//	char arr[] = "hello world";       //memset     memory  内存   set  设置
+//	memset(arr, '*',7);
+//	printf("%s\n", arr);
+//		return 0;
 //	}
+
+
+
+
+//int main()
+//{
+//	char arr1[] = "bit";           //strlen  --   string length--字符串长度有关
+//	char arr2[20] = "########";    //  strcpy  --  string copy  -- 字符串拷贝
+//	strcpy(arr2,arr1);
 //	printf("%s\n", arr2);
 //	return 0;
 //}
 
 
 
-
+//int Add(int x, int y)
+//{
+//	int z = x + y;
+//	return z;
+//}
 //int main()
 //{
-//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
-//	int sz = sizeof(arr) / sizeof(arr[0]);
-//	int left = 0;
-//	int right = sz - 1;
-//	int k = 17;
-//	while (left <= right)
-//	{	
-//		int mid = (left + right) / 2;
-//	
-//		if (arr[mid] < k)
-//		{
-//			left = mid + 1;
-//		}
-//		else if (arr[mid] > k)
-//		{
-//			right = mid - 1;
-//		}
-//		else
-//		{
-//			printf("找到了，下标是：%d\n", mid);
-//			break;
-//		}
-//	}
-//	if (left > right)
-//		printf("找不到\n");
+//	int a = 10;
+//	int b = 20;
+//	int sum=Add(a, b);
+//	printf("%d\n", sum);
 //	return 0;
 //}
 
 
 
 
+//int main()
+//{
+//	char arr1[] = "welcome to bit";
+//	char arr2[] = "##############";
+//	int left = 0;
+//	int right = strlen(arr1) - 1;
+//	while (left <=right)
+//	{
+//		arr2[left] = arr1[left];
+//		arr2[right] = arr1[right];
+//		printf("%s\n", arr2);
+//		Sleep(500);
+//		system("cls");
+//		left++;
+//		right--;
+//
+//	}
+//	printf("%s\n",arr1);
+//	return 0;
+//}
+
 
 //int main()
 //{
-//	int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-//	int k =7;
-//	int  sz = sizeof(arr) / sizeof(arr[0]);      //计算元素个数
-//	int left = 0;                                         //左下标
-//	int right = sz - 1;                        //右下标
+//	char arr1[] = "welcome to bit";
+//	char arr2[] = "##############";
+//	//sz=sizeof (arr1[]）/sizeof （arr2[])
+//	int left = 0;
+//	int right = strlen(arr1) - 1;
 //	while (left <= right)
 //	{
-//		int mid = (left+right) / 2;
-//		if (arr[mid] > k)
-//		{
-//			right = mid - 1;
-//		}
-//		else if (arr[mid] < k)
-//		{
-//			left = mid + 1;
-//		}
-//		else
-//		{
-//			printf("找到了，下标是：%d\n", mid);
-//			break;
-//		}
+//		arr2[left] = arr1[left];
+//		arr2[right] = arr1[right];
+//		printf("%s", arr2);
+//		Sleep(500);
+//		system("cls");
+//		left++;
+//		right--;
 //	}
-//	if (left > right)
-//		printf("找不到\n");
-//		return 0;
+//	printf("%s", arr1);
+//	return 0;
 //}
 
 
 
 //int main()
 //{
-//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };      //写一个代码，在arr数组（有序的）中 找到7
-//	int k =7;
-//	int i = 0;
-//	int sz = sizeof(arr) / sizeof(arr[0]);
-//	for (i = 0; i <sz; i++)
+//	char arr[] = { 1,2,3,4,5,6,7,8,9 };
+//	int i = 1;
+//	int sz = 0;
+//	int k = 4;
+//	sz = sizeof(arr) / sizeof(arr[0]);
+//	for (i = 1; i < sz; i++)
 //	{
 //		if (k == arr[i])
 //		{
@@ -155,50 +152,32 @@ int main()
 //			break;
 //		}
 //	}
-//	if (i==sz)
-//		printf("找不到\n");
+//	if (i == sz)
+//		printf("找不到");
 //	return 0;
 //}
 
 
-
 //int main()
 //{
+//	char arr[] = { 1,2,3,4,5,6,7,8,9 };
+//	int k = 19;
+//	int sz = 0;
 //	int i = 0;
-//	int ret = 1;
-//	int add = 0;
-//	int n = 0;
-//	//scanf("%d", n);
-//	for (n = 1; n <= n; n++)
+//	//int arr = 0;
+//	sz = sizeof(arr) / sizeof(arr[0]);
+//	for (i = 0; i < sz; i++)
 //	{
-//			ret = ret *n;	
-//		add = add + ret;
-//	}
-//	printf("%d\n", add);
-//	return 0;
-//}
-
-
-
-
-
-//int main()
-//{
-//	int i = 0;
-//	int ret = 1;
-//	int add = 0;
-//	int n = 0;
-//	//scanf("%d", n);
-//	for (n = 1; n <= 3; n++)
-//	{
-//		ret = 1;
-//		for (i = 1; i <= n; i++)
+//		if (k == arr[i])
 //		{
-//			ret = ret * i;
+//			printf("找到了,下标是 %d\n", i);
+//			break;
 //		}
-//		add = add + ret;
+//		//else
+//		//	printf("找不到");
 //	}
-//	printf("%d\n", add);
+//	if(i==sz)
+//		printf("找不到");
 //	return 0;
 //}
 
@@ -207,14 +186,16 @@ int main()
 //int main()
 //{
 //	int i = 0;
-//	int arr = 1;
+//	int q = 1;
 //	int n = 0;
+//	int sum = 0;
 //	scanf("%d", &n);
 //	for (i = 1; i <= n; i++)
 //	{
-//		arr = arr * i;
+//		q = q * i;
+//		sum = sum + q;
 //	}
-//	printf("%d\n", arr);
+//	printf("sum=%d\n", sum);
 //	return 0;
 //}
 
@@ -224,14 +205,32 @@ int main()
 //int main()
 //{
 //	int i = 0;
-//	do
+//	int n = 0;
+//	int q = 1;
+//	scanf("%d", &n);
+//	for (i = 1; i <= n; i++)
 //	{
-//		if (i == 5)
-//			//	break;
-//			continue;
-//		printf("%d ", i);
-//		i++;
+//		q = q * i;
 //	}
-//	while (i <= 10);
+//	printf("%d\n", q);
+//	return 0;
+//}
+
+
+
+
+
+
+//int main()
+//{
+//	int i = 0;
+//	int n = 0;
+//	int q = 1;
+//	scanf("%d", &n);
+//	for (i = 1; i <= n; i++)
+//	{
+//		q = q * i;
+//	}
+//	printf("%d", q);
 //	return 0;
 //}
