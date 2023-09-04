@@ -1,369 +1,335 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
-#include<string.h>
+
+//int main()
+//{
+//	double a = 5 %2;
+//	printf("a=%lf\n",a);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a = 16;
+//	 //>>右移操作符
+//	// 移动的是二进制位
+//	//    a ->  00000000000000000000000000010000
+//	//
+//	int b=a >> 1;
+//	printf("%d\n", b);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a = -1;
+//	//正数原码反码补码相同
+//	//整数的二进制表示有：原码，反码，补码
+//	//存储到内存的是补码
+//	//10000000000000000000000000000001  -->原码  -1
+//	//111111111111111111111111111111111111111111110  -->反码
+//	//111111111111111111111111111111111111111111111   -->补码
+//	int b = a >> 2;
+//	printf("%d\n", b);
+//	//
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	int a = 5;
+//	int b = a << 1;
+//	//00000000000000000000000000000101
+//	printf("%d\n", b);
+//	return 0;
+//}
+
+
+//                //&&&&&
+//int main()
+//{
+//	   //&--按2进制位与      两个都是1才是1，其他都是0
+//	int a = 3;
+//	int b = 5;
+//	int c = a & b;
+//	              //00000000000000000000000000000011
+//	              //00000000000000000000000000000101
+//	              //00000000000000000000000000000001
+//	printf("%d\n", c);
+//	return 0;
+//}
+
+//                 //|||||||||
+//              //    |   按二进制位 或
+//               //             都是0，才是0，有一个1，就是1
+//int main()
+//{
+//    int a = 3;
+//    int b = 5;
+//    int c = a | b;
+//    printf("%d\n", c);
+//                 //00000000000000000000000000000011
+//                 //00000000000000000000000000000101
+//                 //00000000000000000000000000000111
+//	return 0;
+//}
+
+
+             //按位异或^^^^^^^
+              //  对应的二进制位相同为0，相异为1
+//int main()
+//{
+//	int a = 3;
+//	int b = 5;
+//	int c = a ^ b;
+//	printf("%d\n", c);
+//                   //00000000000000000000000000000011
+//                   //00000000000000000000000000000101
+//	               //00000000000000000000000000000110
+//	return 0;
+//}
+
+
+                 //创建变量换值
+//int main()
+//{
+//    int a = 3;
+//    int b = 5;
+//    int tmp = 0;
+//    printf("before:a=% d b=% d\n", a, b);
+//    tmp = a;
+//    a = b;
+//    b = tmp;
+//    printf("after:a = % d b = % d\n", a, b);
+//    return 0;
+//}
+
+
+//                   //加减法换值
+//int main()
+//{
+//    int a = 3;
+//    int b = 5;
+//    printf("before:a=% d b=% d\n", a, b);
+//                  //加减法    有缺陷，可能会溢出
+//    a = a + b;
+//    b=a - b;
+//    a = a - b;
+//    printf("after :a = % d b = % d\n", a, b);
+//    return 0;
+//}
+
+
+//     //异或的方法     执行效率不高，不如tmp那个
+//int mian()
+//{
+//    int a = 3;
+//    int b = 5;
+//    printf("before:a=% d b=% d\n", a, b);
+//    a = a ^ b;
+//    b = a ^ b;
+//    a = a ^ b;
+//    return 0;
+//}
+
+
+//编写代码实现：求一个整数存储在内存中的二进制中1的个数。
+//int main()
+//{
+//    int count = 0;
+//    int num = 0;
+//    scanf("%d", &num);
+//
+//    int i = 0;
+//    for (i = 0; i < 32; i++)
+//    {
+//        if (1 == ((num >> i) & 1))
+//        count++;
+//    }
+//    printf("%d\n", count);
+//    //32bit
+//    //num&1==1
+//    //00000000000000000000000000000011
+//    //00000000000000000000000000000001
+//    //00000000000000000000000000000001
+//   //统计num中的补码有几个1
+//
+//
+//    // //统计num中补码中有几个1          这种算法不能算负数
+//    //while (num)
+//    //{
+//    //    if (num % 2 == 1)
+//    //        count++;
+//    //    num = num / 2;
+//    //}
+//    //printf("%d\n", count);
+//    return 0;
+//}
+
+
+//int main()
+//{
+//    int a = 1;
+//    int b = a / 2;
+//    printf("%d\n", b);
+//    return 0;
+//}
+
+
+//int main()
+//{
+//    int count = 0;
+//    int num = 0;
+//    int i = 0;
+//    scanf("%d", &num);
+//    for (i = 0; i < 32; i++)
+//    {
+//        if (1 == ((num>>i) & 1))
+//            count++;
+//    }
+//    printf("%d\n", count);
+//    return 0;
+//}
+
+
+//int main()
+//{
+//    int count = 0;
+//    int num = 0;
+//    scanf("%d", &num);
+//    while (num)
+//    {
+//        if (num % 2 == 1)
+//        {
+//            count++;
+//            num = num / 2;
+//        }
+//    }
+//    printf("%d\n", count);
+//    return 0;
+//}
+
+
+//int main()
+//{
+//    int a = 10;
+//    a = a + 2;
+//    a += 2;           //复合赋值符
+//
+//    a = a >> 1;
+//    a >>= 1;
+//
+//    a = a & 1;
+//    a &= 1;
+//    return 0;
+//}
+
+//单目操作符
+//int main()
+//{
+//    int a = 0;
+//    //printf("%d\n", !a);   //10为真，把真变为假
+//    if (!a)        //a为假，！a为真，打印
+//    {
+//        printf("呵呵\n");
+//    }
+//    if (a)         //a为真，打印呵呵
+//    {
+//        printf("呵呵\n");
+//    }
+//    return 0;
+//}
+
+
+//int main()
+//{
+//    int a = -5;
+//    a = -a;
+//    return 0;
+//}
+
+//int main()
+//{
+//    int a = 10;
+//  int* p= &a;           //取地址操作符
+//  *p=20;                   //解引用操作符,*p就是a
+//    return 0;
+//}
+
+
+//int main()
+//{
+//    int a = 10;
+//    char c = 'r';
+//    char* p = &c;
+//    int arr[10] = { 0 };        //对应数组，去掉名字，剩下的就是类型   int[10]
+//           //sizeof 计算变量所占空间内存的大小，单位是字节
+//    printf("%d\n", sizeof(a));//4
+//    printf("%d\n", sizeof(int));//4
+//
+//    printf("%d\n", sizeof(c));//1
+//    printf("%d\n", sizeof(char));//1
+//
+//    printf("%d\n", sizeof p);//32系统是4，64系统是8
+//    printf("%d\n", sizeof(char*));
+//
+//    printf("%d\n", sizeof arr);//40
+//    printf("%d\n", sizeof(int [10]));
+//
+//    return 0;
+//}
+
+
+//int main()
+//{
+//    short s = 0;
+//    int a = 10;
+//    printf("%d\n", sizeof(s = a + 5));
+//    printf("%d\n", s);
+//    return 0;
+//}
+
+
+//int main()
+//{
+//    //int a = 0;
+//    ////~  按（2进制）位取反
+//    ////00000000000000000000000000000000
+//    ////11111111111111111111111111111111                    --补码
+//    ////11111111111111111111111111111110                    --反码
+//    ////10000000000000000000000000000001   --原码
+//    //printf("%d\n", ~a);
+//    //return 0;
+//    int a = 11;
+//    a=a | (1 << 2);
+//    printf("%d\n", a);
+//    a = a & (~(1 << 2));
+//    printf("%d\n", a);
+//    //00000000000000000000000000001011
+//    //00000000000000000000000000000100    或上去
+//    // 00000000000000000000000000000001
+//    // 1<<2
+//    //00000000000000000000000000001111
+//    //11111111111111111111111111111011                        按位与
+//    // 00000000000000000000000000000100      //取反得到上面
+//    //00000000000000000000000000001011
+//}
+
+
+//int main()
+//{
+//    int a = 10;
+//    printf("%d\n", a++);          //后置++，先使用，再++
+//    printf("%d\n", ++a);        //前置++，先++，后使用
+//   
+//    return 0;
+//}
+
 
 int main()
 {
-    int arr[3][4] = { {1,2,3,1},{5,6,7,8,} };
-    int i = 0;
-    for (i = 0; i < 3; i++)
-    {
-        int j = 0;
-        for (j = 0; j < 4; j++)
-        {
-            printf("&arr[%d][%d]=%p\n",i,j,&arr[i][j]);
-        }
-       
-    }
+    int a = (int)3.14;    //int a=int (3.14)   错的
+    printf("%d\n", a);
     return 0;
 }
-
-
-
-//int main()
-//{
-//    int arr[3][4] = { {1,2,3},{4,5} };        //三行四列的数组
-//    int i = 0;
-//    for (i = 0; i < 3; i++)
-//    {
-//        int j = 0;
-//        for (j = 0; j < 4; j++) 
-//        {
-//            printf("%d ", arr[i][j]);
-//        }
-//       printf("\n");
-//    }
-
-    //char ch[5][6];         //五行六列数组
-
-    //int arr[] = { 1,2,3,4 };
-    //int arr[][4] = { {1,2,3,4},{5,6,7,8} };     //行可以省略，列不能省略
-
-  
-//    return 0;
-//}
-
-
-
-//int main()
-//{
-//    int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
-//    int sz = sizeof(arr) / sizeof(arr[0]);
-//    int i = 0;
-//    for (i = 0; i < sz; i++)
-//    {
-//        printf("arr(%d)=%p\n", i, &arr[i]);
-//}
-//    return 0;
-//}
-
-
-
-
-
-//int main()
-//{
-//    int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
-//    int sz = sizeof arr/ sizeof arr[0];
-//    int i = 0;
-//    for (i = 0; i < sz; i++)
-//
-//    {
-//        printf("&arr[%d]=%p\n", i, &arr[i]);
-//    }
-//    return 0;
-//}
-
-
-
-
-//int main()
-//{
-   // char arr[] = "abcdef";   //  [a] [b] [c] [d] [e] [f] [\0] 
-   //// printf("%c\n", arr[3]);    //3是下标
-   // int i = 0;
-   // int len = strlen(arr);
-   // for (i = 0; i < len; i++)
-   // {
-   //     printf("%c ", arr[i]);
-   // }
-
-//    int arr[] = { 1,2,3,4,5,6,7,8,9,0 };
-//    int sz = sizeof(arr) / sizeof(arr[0]);
-//    int i = 0;
-//    for (i = 0; i < sz; i++)
-//    {
-//        printf("%d ", arr[i]);
-//    }
-//    return 0;
-//}
-
-
-//int main()
-//{
-//    char arr1[] = "abc";
-//    char arr2[] = {'a','b','c'};
-//    printf("%d\n", sizeof(arr1));  //4
-//    printf("%d\n", sizeof(arr2)); //3
-//    printf("%d\n", strlen(arr1)); //3
-//    printf("%d\n", strlen(arr2)); //?   未知的，是随机值，遇到\0停止
-//    return 0;
-//}
-
-
-
-//int main()
-//{
-//                     //创建数组--存放整型--10个
-//    int arr[10]= { 1,2,3 };     //不完全初始化,剩下的元素默认初始化为0
-//    char arr2[5] = { 'a',98 };  //整型数组 只有ab后面是0
-//    char arr3[5] = "ab";            //字符串数组  a b \0  三个
-//    char arr4[] = "abcdef";
-//    printf("%d\n", sizeof(arr4));  //sizeof计算arr4所占空间的大小
-//    printf("%d\n", strlen(arr4));  //strlen 求字符串长度，\0停止，不算\0
-//  //  int n = 5;
-//   // char ch[n];    //不行的，要一个常量，不能是变量
-//    return 0;
-//}
-
-
-
-//void test(int n)
-//{
-//    if (n < 10000)
-//    {
-//        test(n + 1);
-//    }
-//}
-//int main()
-//{
-//    test(1);
-//    return 0;
-//}
-
-//int F(int n)
-//{
-//    int a = 1;
-//    int b = 1;
-//    int c = 1;
-//    while (n > 2)
-//    {
-//        c = a + b;
-//        a = b;
-//        b = c;
-//        n--;
-//    }
-//    return c;
-//}
-//int main()
-//{
-//    int n = 0;
-//    int ret = 0;
-//    scanf("%d", &n);
-//    ret = F(n);
-//    printf("%d\n", ret);
-//    return 0;
-//}
-
-
-////循环的方式解决斐波那契数
-//int F(int n)
-//{
-//    int a = 1;
-//    int b = 1;
-//    int c = 1;
-//    while (n > 2)
-//    {
-//        c = a + b;
-//        a = b;
-//        b = c;
-//        n--;
-//    }
-//    return c;
-//}
-//int main()
-//{
-//    int i = 0;
-//    int ret = 0;
-//    int n = 0;
-//    scanf("%d", &n);
-//    ret = F(n);
-//    printf("%d\n", ret);
-//    return 0;
-//}
-
-
-//int F(int n)
-//{
-//    if (n <= 2)
-//        return 1;
-//    else
-//        return F(n - 1) + F(n - 2);
-//}
-//int main()
-//{
-//    int ret = 0;
-//    int n = 0;
-//    scanf("%d", &n);
-//    ret = F(n);
-//    printf("%d\n", ret);
-//    return 0;
-//}
-
-
-//斐波那契数列
-//int count = 0;
-//int F(int n)
-//{
-//    if (n == 3)
-//    {
-//        count++;
-//    }
-//    if (n <= 2)
-//        return 1;
-//    else
-//        return F(n - 1) + F(n - 2);
-//}
-//int main()
-//{
-//    int n = 0;
-//    int ret = 0;
-//    scanf("%d", &n);
-//    ret = F(n);
-//    printf("ret=%d\n", ret);
-//    printf("count=%d\n", count);
-//    return 0;
-//}
-
-
-//int F(int n)
-//{
-//    if (n <= 1)
-//        return 1;
-//    else
-//        return n * F(n - 1);
-//}
-//int main()
-//{
-//    int n = 0;
-//    int ret = 0;
-//    scanf("%d", &n);
-//    ret = F(n);
-//    printf("%d\n", ret);
-//    return 0;
-//}
-
-
-
-//            //递归的方法
-//int F(int n)
-//{
-//    if (n <= 1)
-//        return 1;
-//    else
-//        return n * F(n - 1);
-//}
-//int main()
-//{
-//    int n = 0;
-//    int ret = 0;
-//    scanf("%d", &n);
-//    ret = F(n);
-//    printf("%d\n", ret);
-//}
-
-
-
-//int Facl(int n)
-//{
-//    int i = 0;
-//    int ret = 1;
-//    for (i = 1; i <= n; i++)
-//    {
-//        ret*=i;
-//    }
-//    return ret;
-//}
-//int  main()
-//{
-//    int n = 0;
-//    int ret = 0;
-//    scanf("%d", &n);
-//    ret=Facl(n);       //循环的方式
-//    printf("%d\n", ret);
-//        return 0;
-//}
-
-//int my_strlen(char*str)
-//{
-//	int count = 0;
-//	while (*str != '\0')
-//	{
-//		count++;
-//		str++;
-//	}
-//	return count;
-//}
-      //把大事化小   
-                     //my_strlen("bit")
-                    //1+my_strlen("it")
-                    //1+1+my_strlen("t")
-                    //1+1+1+my_strlen("")
-                     //1+1+1+0
-                     //3
-//int my_strlen(char * str)            //递归的方法
-//{
-//	if (*str != '\0')
-//		return 1 + my_strlen(str + 1);
-//	else
-//		return 0;
-//}
-//int main()
-//{
-//	char arr1[] = "bit";
-//	char arr2[] = "hello";
-//	//int len=strlen(arr);
-//	//printf("%d\n", len);
-//	int len = my_strlen(arr1);     //数组传参，传的不是整个数组，传的是第一个元素的地址
-//	printf("len=%d\n", len);
-//	int len2 = my_strlen(arr2);
-//	printf("len=%d\n", len2);
-//	return 0;
-//}
-
-
-//void print(int n)
-//{
-//	if (n > 9)
-//	{
-//		print(n / 10);
-//	}
-//	printf("%d ", n % 10);
-//}
-//int main()
-//{
-//	unsigned int num = 0;
-//	scanf("%d", &num); //打印1234
-//	      //用递归解决
-//	print(num);
-//	return 0;
-//}
-
-
-//int main()
-//{
-//	printf("hehe\n");
-//	main();
-//	return 0;
-//}
-
-
-//#include"add.h"
-//int main()
-//{
-//	int a = 10;
-//	int b = 20;
-//	int Sum = Add(a, b);
-//	printf("%d\n", Sum);
-//	return 0;
-//}
