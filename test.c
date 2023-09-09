@@ -2,139 +2,174 @@
 #include<stdio.h>
 
 
-int Add(int x, int y)
-{
-	int z = 0;
-	z = x + y;
-	return z;
-}
+
+
+
+
 int main()
 {
-	int a = 10;
-	int b = 10;
-	int ret = 0;
-	ret = Add(a, b);
+	 char a = 128;
+	 //10000000000000000000000010000000     -128原码
+	 //11111111111111111111111101111111                            反码
+	 //11111111111111111111111110000000                          补码
+	 // 10000000
+	 //11111111111111111111111110000000                   整型提升，认为是无符号数，直接原反补一样  
+	printf("%u\n", a);
 	return 0;
 }
 
 
-
-//typedef struct Str
-//{
-//	char name[20];
-//	char tele[12];
-//	char sex[5];
-//	short age;
-//}Str;
-//void Print(Str*ps)
-//{
-//	printf("%s\n", ps->name);
-//	printf("%s\n", ps->tele);
-//	printf("%s\n", ps->sex);
-//	printf("%d\n", ps->age);
-//}
+//输出什么？
 //int main()
 //{
-//	Str s = { "张三","254225442","男",40 };
-//	Print(&s);
+//	char a = -1;
+//	signed char b = -1;
+//	unsigned char c = -1;
+//	printf("a=%d,b=%d,c=%d", a, b, c);
+//	return 0;
+//	// 10000000000000000000000000000001     -1原码
+//	// 11111111111111111111111111111110                         反码
+//	//11111111111111111111111111111111                           补码
+//	// char存储的   11111111      因为打印%d是整型，要整型提升，符号位前面补1或0
+//	// 11111111111111111111111111111111                          提升后  补码
+//	// 10000000000000000000000000000001         提升后  原码    还是-1
+//	// signed char  也是一样的
+//	//unsigned  char
+//	//  char存储的   11111111      因为打印%d是整型，要整型提升
+//	// 因为是unsigned ，认为整数，符号位是0
+//	// 00000000000000000000000011111111            提升后  补码，因为认为是正数，原反补一样
+//	//算出是255
+//}
+
+
+//int main()
+//{
+//	int a = 0x11223344;
+//	//int* p = &a;
+//	char* p = &a;
+//	*p = 0;
 //	return 0;
 //}
 
 
 
-//typedef struct Stu         //typedef给结构体重新起名
+
+//int check_sys()
 //{
-//	//成员变量
-//	char name[20];
-//	short age;
-//	char tele[12];
-//	char sex[5];
-//}Stu;
-//
-//void Print1(Stu tmp)
-//{
-//	printf("name:%s\n", tmp.name);
-//	printf("age:%d\n", tmp.age);
-//	printf("tele: %s\n", tmp.tele);
-//	printf("sex:%s\n", tmp.sex);
+//	int a = 1;
+//	char* p = (char*)&a;
+//	//返回1，小端
+//	//返回2，大端
+//	return *p;
 //}
-//void Print2(Stu* ps)
-//{
-//	printf("name:%s\n", ps->name);
-//	printf("age:%d\n", ps->age);
-//	printf("tele:%s\n", ps->tele);
-//	printf("sex:%s\n", ps->sex);
-//}
-//int main()
-//{
-//	Stu s = { "李四",40,"1555654654","男" };
-//	  //打印结构体数据
-//	  //Print1和Print2哪个更好？
-//	Print1(s);
-//	Print2(&s);
-//	return 0;
-//}
-
-
-
-//struct S
-//{
-//	int a;
-//	char c;
-//	char arr[20];
-//	double d;
-//};
-//struct T
-//{
-//	char ch[10];
-//	struct S s;
-//	char* pc;
-//};
-//int main()
-//{
-//	char arr[] = "hello bit\n";
-//	struct T t = { "hehe",{100,'w',"hello word",3.14},arr };
-//	printf("%s\n", t.ch);    //hehe
-//	printf("%s\n", t.s.arr); //hello ward
-//	printf("%lf\n", t.s.d);  //3.14
-//	printf("%s\n", t.pc); // hello bit
-//	return 0;
-//}
-
-//描述一个学生
-//名字
-//年龄
-//电话
-//性别
-//struct Stu          //struct结构体关键字     Stu 结构体标签
-//{                               //struct Stu  结构体类型
-//	//成员变量
-//	char name[20];
-//	short age;
-//	char tele[12];
-//	char sex[5];
-//}; s1, s2, s3;       //s1,s2,s3是三个全局的结构体变量
-//int main()
-//{
-//	struct Stu s;  //局本的结构体变量
-//	return 0;
-//}
-
-
-//typedef struct Stu         //typedef给结构体重新起名
-//{
-//	//成员变量
-//	char name[20];
-//	short age;
-//	char tele[12];
-//	char sex[5];
-//}Stu;
 //
 //int main()
 //{
-//	struct Stu s1 = {"张三",20,"15249287076","男"};
-//	Stu s2 = { "旺财",30,"57574275","女" };
+//	int a = 1;
+//	int ret=check_sys();
+//	if (ret == 1)
+//	{
+//		printf("小端\n");
+//	}
+//	else
+//	{
+//		printf("大端\n");
+//	}
+//	//返回1，小端
+//	//返回0，大端
 //	return 0;
 //}
 
+
+
+
+////写一段代码，告诉我当前存储的字节序是什么
+//int main()
+//{
+//	int a = 1;
+//	char*p=(char*) & a;      //强制类型转换
+//	if (*p == 1)
+//	{
+//		printf("小端\n");
+//	}
+//	else
+//	{
+//		printf("大端\n");
+//	}
+//	return 0;
+//}
+
+
+
+
+
+////小端存储方式
+//int main()
+//{
+//	//int a = 20;
+//	int b = 0x11223344;
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	1 + (-1);           //计算机只会加法
+//	// 1的原码  00000000000000000000000000000001
+//	//     反码  00000000000000000000000000000001
+//	//     补码  00000000000000000000000000000001
+//	// 
+//	//-1的原码  10000000000000000000000000000001
+//	//      反码  111111111111111111111111111111111110
+//	//      补码  111111111111111111111111111111111111
+//
+//	//              00000000000000000000000000000001
+//	//     +        111111111111111111111111111111111111
+//	//     =        100000000000000000000000000000000      32个0
+//	//    只能存32个，前面的1被去除
+//	//                00000000000000000000000000000000  = 0
+//
+//
+//	return 0;
+//}
+
+
+
+//int main()
+//{
+//	int a = 20;
+//	int b = -10;
+//	return 0;
+//}
+
+
+
+//void test(void)            //void空类型   第二个void表示无参数
+//{
+//	printf("hehe\n");
+//}
+//int main()
+//{
+//	test(100);
+//	return 0;
+//}
+
+
+
+//int main()
+//{
+//	printf("\"Genious is 1%% inspiration and 99%%prespiration\"");
+//
+//	return 0;
+//}
+
+
+
+
+//int main()
+//{
+//	int a = 10;
+//	float f = 10.0;
+//	return 0;
+//}
 
