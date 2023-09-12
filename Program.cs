@@ -4,39 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _9._11
+namespace _09上午小复习
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            ////变量类型  变量名；
-            ////变量名=值
-            //int number;
-            //number = 100;
-            //int n = 100;
-            //double d = 3.14;
-            ////11111111111111111
-            ////00000000000000
-            //string Name = "张三";//字符串类型
-            //string s = "";//字符串可以空
-            ////字符串和字符区别    羊肉串和羊肉
-            //char gender = '男';//字符只能有一个，不能空
-            //decimal money = 5000m;
 
-            //int num = 10;
-            //Console.WriteLine(num);
-            //Console.ReadKey();
-            //float
-            //double d = 36.6;
-            //Console.WriteLine("d");
-
-            //int num1 = 10;
-            //int num2 = 20;
-
-            string name = "王五";
-            Console.WriteLine("你好，"+name);
-            Console.ReadKey();
+            /*
+             * 变量类型： int double string char decimal bool
+             * 运算符：
+             * 赋值运算符：=
+             * 复合赋值运算符：+= -= *= /= %=
+             * 算数运算符：+-* / % ++ --
+             * 关系运算符：> < >= <= == !=
+             * 逻辑运算符：&&  ||  !
+             * 类型转换：
+             * 1.自动类型转换
+             * 2.强制类型转换
+             * 3.Convert
+             *
+             * 
+             */
         }
     }
 }
