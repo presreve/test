@@ -1,42 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _9._13方法函数
+namespace _0._0程序设计静态作业
 {
-    internal class Program
+   public  class Program
     {
+        private static int _age;
+        private Program(int age) //类的构造为私有
+        {
+            _age = 10;
+        }
         static void Main(string[] args)
         {
-            Program.PlayGame();
-            Program.WuDi();
-            Program.PlayGame();
-            Program.PlayGame();
-            Program.PlayGame();
-            Program.PlayGame();
-            Program.WuDi();
-            Program.PlayGame();
+            Program  op = new Program(0);  //类的实例对象
+            Program.Haha();
             Console.ReadKey();
-
         }
-        /// <summary>
-        /// 正常玩游戏
-        /// </summary>
-        public static void PlayGame()
+        public static void Haha()   //静态方法
         {
-            Console.WriteLine("超级玛丽走呀走，跳呀跳，顶呀顶");
-            Console.WriteLine("超级玛丽走呀走，跳呀跳，顶呀顶");
-            Console.WriteLine("超级玛丽走呀走，跳呀跳，顶呀顶");
-        }
-        /// <summary>
-        /// 无敌
-        /// </summary>
-        public static void WuDi()
-        {
-            Console.WriteLine("突然，顶到一个无敌");
-            Console.WriteLine("屏幕闪烁");
+            Console.WriteLine(_age);
         }
     }
 }
